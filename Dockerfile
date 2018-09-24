@@ -1,9 +1,3 @@
-FROM rust:1.28 AS rust
-
-RUN git clone https://github.com/yuya-takeyama/circle-gh-tee && \
-  cd circle-gh-tee && \
-  cargo build --release
-
 FROM ruby:2.5
 
 RUN apt-get update -qq && \
@@ -13,4 +7,4 @@ RUN apt-get update -qq && \
   ./awscli-bundle/install -i /usr/local/aws -b /usr/local/bin/aws && \
   rm -rf ./awscli-bundle awscli-bundle.zip
 
-COPY --from=rust /circle-gh-tee/target/release/circle-gh-tee /usr/local/bin
+COPY --from=yuyat/circle-gh-tee /usr/local/bin/circle-gh-tee /usr/local/bin
