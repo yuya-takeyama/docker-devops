@@ -1,5 +1,6 @@
 FROM ruby:2.5-slim
 
+# The instructions are stolen from https://github.com/mtsmfm/docker-ruby-awscli
 RUN apt-get update -qq && \
   apt-get install -y --no-install-recommends unzip python-dev curl git && \
   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip" && \
