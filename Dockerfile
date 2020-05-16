@@ -1,4 +1,4 @@
-FROM ruby:2.5-slim
+FROM ruby:2.7.1-slim
 
 # The instructions are stolen from https://github.com/mtsmfm/docker-ruby-awscli
 RUN apt-get update -qq && \
